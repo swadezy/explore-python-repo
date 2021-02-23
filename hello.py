@@ -1,3 +1,5 @@
+import math
+
 # variables don't need to be declared beforehand
 # declaring a variable like below creates an object with an id number - the declared variable is just a name that knows to point to that object id number
 # because of this, declared variables with the same value actually reference the same object
@@ -54,3 +56,28 @@ def greet(name):
     for example, this one takes a name and prints a string including that name to console
     """
     print("Hello there", name)
+
+
+def profit(monies):
+    sell = monies["sell_price"] * monies["inventory"]
+    cost = monies["cost_price"] * monies["inventory"]
+    print(sell - cost)
+    return round(sell - cost)
+
+
+profit({
+    "cost_price": 2.77,
+    "sell_price": 7.95,
+    "inventory": 8500
+})
+
+def squared_cubed(numbers):
+    if math.sqrt(numbers[0]) ** 3 == numbers[1]:
+        print(True)
+        return True
+    else:
+        print(False)
+        return False
+squared_cubed([4, 8])
+squared_cubed([16, 48])
+squared_cubed([9, 27])
